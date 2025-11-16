@@ -84,6 +84,13 @@ const SmartSpendApp = () => {
     setCurrentPage('landing');
     showSuccessNotification('Logged out!');
   };
+  const handleDemoLogin = () => {
+  const demoUser = { id: 0, name: 'Demo User', email: 'demo@smartspend.com' };
+  setCurrentUser(demoUser);
+  setIsLoggedIn(true);
+  setCurrentPage('dashboard');
+  showSuccessNotification('Welcome to the demo!');
+  };
 
   const requireAuth = (page) => {
     if (!isLoggedIn) {
@@ -233,7 +240,7 @@ const SmartSpendApp = () => {
           <p style={{fontSize:'20px',color:'#4b5563',marginBottom:'32px'}}>Track expenses, stay within budget, see where money goes.</p>
           <div style={{display:'flex',gap:'16px',justifyContent:'center'}}>
             <button onClick={()=>isLoggedIn?requireAuth('dashboard'):setCurrentPage('signup')} style={{backgroundColor:'#6366f1',color:'white',padding:'16px 32px',borderRadius:'8px',fontSize:'18px',fontWeight:'600',border:'none',cursor:'pointer'}}>{isLoggedIn?'Dashboard':'Get started'}</button>
-            <button onClick={()=>requireAuth('dashboard')} style={{backgroundColor:'white',color:'#6366f1',padding:'16px 32px',borderRadius:'8px',fontSize:'18px',fontWeight:'600',border:'2px solid #6366f1',cursor:'pointer'}}>View demo</button>
+            <button onClick={handleDemoLogin} style={{backgroundColor:'white',color:'#6366f1',padding:'16px 32px',borderRadius:'8px',fontSize:'18px',fontWeight:'600',border:'2px solid #6366f1',cursor:'pointer'}}>Try Demo</button>
           </div>
         </section>
         <footer style={{backgroundColor:'#111827',color:'white',padding:'48px 0',marginTop:'80px'}}>
