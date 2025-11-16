@@ -262,7 +262,7 @@ const SmartSpendApp = () => {
         </nav>
         <div style={{maxWidth:'1280px',margin:'0 auto',padding:'32px 24px'}}>
           <div style={{display:'flex',justifyContent:'space-between',marginBottom:'32px'}}>
-            <h1 style={{fontSize:'30px',fontWeight:'bold'}}>Dashboard</h1>
+            <h1 style={{fontSize:'30px',fontWeight:'bold'}}>Dashboard {currentUser ? `- Welcome, ${currentUser.name}!` : ''}</h1>
             <button onClick={()=>requireAuth('addExpense')} style={{backgroundColor:'#6366f1',color:'white',padding:'12px 24px',borderRadius:'8px',border:'none',cursor:'pointer'}}>+ Add Expense</button>
           </div>
           
